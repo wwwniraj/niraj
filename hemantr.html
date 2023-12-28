@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NFT Cost Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cf1212;
+            animation: niraj;
+            animation-duration: 2s;
+            animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  0%   {top: 0px; left: 0px; background: red;}
+  25%  {top: 0px; left: 100px; background: blue;}
+  50%  {top: 100px; left: 100px; background: yellow;}
+  75%  {top: 100px; left: 0px; background: green;}
+  100% {top: 0px; left: 0px; background: red;}
+}
+        
+
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #0c79e6;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+  0%   {top: 0px; left: 0px; background: red;}
+  25%  {top: 0px; left: 100px; background: rgb(6, 217, 115);}
+  50%  {top: 100px; left: 100px; background: rgb(125, 78, 233);}
+  75%  {top: 100px; left: 0px; background: green;}
+  100% {top: 0px; left: 0px; background: rgb(184, 231, 11);}
+}
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #dbb50c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .coder{
+            color: #45a049;
+            margin-top: 0px;
+            padding-top: 50px;
+            /* border: 20px red solid; */
+        }
+    </style>
+</head>
+
+<body>
+    <center><h1>PRESENT</h1></center>
+    <center><h1 class="coder">SMART CODER</h1></center>
+    <div class="calculator">
+            
+        <label for="gasPrice">Gas Price (Gwei):</label>
+        <input type="number" id="gasPrice" placeholder="Enter gas price">
+
+        <label for="gasLimit">Gas Limit:</label>
+        <input type="number" id="gasLimit" placeholder="Enter gas limit">
+
+        <label for="nftQuantity">Number of NFTs:</label>
+        <input type="number" id="nftQuantity" placeholder="Enter the number of NFTs">
+
+        <button onclick="calculateCost()">Calculate Cost</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateCost() {
+            const gasPrice = document.getElementById("gasPrice").value;
+            const gasLimit = document.getElementById("gasLimit").value;
+            const nftQuantity = document.getElementById("nftQuantity").value;
+
+            // Basic calculation for demonstration purposes
+            const totalGasCost = gasPrice * gasLimit * nftQuantity;
+
+            document.getElementById("result").innerHTML = `Estimated Cost: ${totalGasCost} ETH`;
+        }
+    </script>
+</body>
+
+</html>
